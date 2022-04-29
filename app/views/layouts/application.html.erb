@@ -23,6 +23,12 @@
         <p class="alert"><%= alert %></p>
       </div>
     <% end %>
+
+    <%= link_to root_path, class: "navbar-item" do %>
+      <h1 class="title is-4" style="font-family: cursive;">hairgram</h1>
+    <% end %>
+
+    <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "button is-warning is-light" %>
     
     <%= yield %>
   </body>
