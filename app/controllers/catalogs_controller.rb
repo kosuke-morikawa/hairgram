@@ -9,7 +9,7 @@ class CatalogsController < ApplicationController
     @catalog = Catalog.new
   end
 
-  def
+  def create
     @catalog = Catalog.new(catalog_params)
     @catalog.user_id = current_user.id
     @catalog.save
