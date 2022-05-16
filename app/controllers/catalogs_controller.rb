@@ -9,6 +9,13 @@ class CatalogsController < ApplicationController
     @catalog = Catalog.new
   end
 
+  def
+    @catalog = Catalog.new(catalog_params)
+    @catalog.user_id = current_user.id
+    @catalog.save
+    redirect_to catalog_path(@catalog)
+  end
+
   def edit
   end
 end
