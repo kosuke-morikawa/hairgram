@@ -18,4 +18,10 @@ class CatalogsController < ApplicationController
 
   def edit
   end
+
+  private
+  def catalog_params
+    params.require(:catalog).permit(:title, :body, :image)
+  end
+
 end
