@@ -6,6 +6,7 @@ class CatalogsController < ApplicationController
   end
 
   def new
+    @catalog = Catalog.new
   end
 
   def edit
