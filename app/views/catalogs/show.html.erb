@@ -33,6 +33,9 @@
                   <td><%= simple_format @catalog.body %></td>
                 </tr>
               </table>
+              <% if @catalog.user.id == current_user.id %>
+                <%= link_to "編集画面へ", edit_catalog_path(@catalog), class: "button is-success" %>
+              <% end %>
             </div>
           </div>
         </div>
