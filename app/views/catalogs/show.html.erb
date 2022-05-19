@@ -1,2 +1,8 @@
 <h1>Catalogs#show</h1>
 <p>Find me in app/views/catalogs/show.html.erb</p>
+
+<%= attachment_image_tag @catalog, :image %>
+
+<%= @catalog.title %>
+
+<%= simple_format @catalog.body %>
