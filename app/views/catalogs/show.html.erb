@@ -43,3 +43,9 @@
     </div>
   </div>
 </section>
+
+<%= @catalog.user.username %>
+
+<%= link_to user_path(@catalog.user) do %>
+  <%= @catalog.user.username %>さんのページへ
+<% end %>
