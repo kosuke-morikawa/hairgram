@@ -18,6 +18,7 @@ class CatalogsController < ApplicationController
   end
 
   def edit
+    @catalog = Catalog.find(params[:id])
   end
 
   private
