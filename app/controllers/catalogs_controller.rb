@@ -21,6 +21,12 @@ class CatalogsController < ApplicationController
     @catalog = Catalog.find(params[:id])
   end
 
+  def update
+    @catalog = Catalog.find(params[:id])
+    @catalog.update(catalog_params)
+    redirect_to catalog_path(@catalog)
+  end
+
   private
   def catalog_params
     params.require(:catalog).permit(:title, :body, :image)
