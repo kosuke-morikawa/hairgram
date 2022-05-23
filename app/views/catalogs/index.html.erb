@@ -16,22 +16,26 @@
           <div class="card">
             <div class="card-image">
               <figure class="image is-4by3">
+                <%= link_to catalog_path(catalog) do %>
                   <%= attachment_image_tag catalog, :image %>
+                <% end %>
               </figure>
             </div>
             <div class="card-content">
               <div class="media">
                 <div class="media-left">
                   <figure class="image is-48x48">
-                    <%= attachment_image_tag catalog.user, :profile_image, fallback: "no-image.png" %>
+                    <%= link_to user_path(catalog.user.id) do %>
+                      <%= attachment_image_tag catalog.user, :profile_image, fallback: "no-image.png" %>
+                    <% end %>
                   </figure>
                 </div>
                 <div class="media-content">
-                  <div class="title"><%= catalog.user.username %></div>
+                  <div class="title"><%= link_to catalog.user.username, user_path(catalog.user.id) %></div>
                 </div>
               </div>
               <div class="content">
-                <time><%= catalog.updated_at.strftime("%Y-%m-%d %H:%M") %></time>
+                <time><%= catalog.updated_at.strftime("%Y-%m-%d %H:%M") %></time>更新
               </div>
             </div>
           </div>
