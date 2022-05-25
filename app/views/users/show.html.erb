@@ -62,9 +62,24 @@
             <div class="card-content">
               <div class="media">
                 <div class="media-content">
-                  <%= link_to "詳細", catalog_path(catalog), class: "panel-block" %>
-                  <%= link_to "編集", edit_catalog_path(catalog), class: "panel-block" %>
-                  <%= link_to "削除", catalog_path(catalog), method: :delete, data: {confirm: "削除しますか？"}, class: "panel-block" %>
+                  <%= link_to catalog_path(catalog), class: "panel-block" do %>
+                    <span class="panel-icon">
+                      <i class="fas fa-book" aria-hidden="true"></i>
+                    </span>
+                    詳細を見る
+                  <% end %>
+                  <%= link_to edit_catalog_path(catalog), class: "panel-block" do %>
+                    <span class="panel-icon">
+                      <i class="fas fa-edit"></i>
+                    </span>
+                    編集する
+                  <% end %>
+                  <%= link_to catalog_path(catalog), method: :delete, data: {confirm: "削除しますか？"}, class: "panel-block" do %>
+                    <span class="panel-icon">
+                      <i class="fas fa-trash"></i>
+                    </span>
+                    削除する
+                  <% end %>
                 </div>
               </div>
               <div class="content">
