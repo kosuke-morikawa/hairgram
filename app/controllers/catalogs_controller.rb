@@ -29,8 +29,8 @@ class CatalogsController < ApplicationController
   end
 
   def destroy
-    @catalog = Catalog.find(params[:id])
-    @catalog.destroy
+    catalog = Catalog.find(params[:id])
+    catalog.destroy
     redirect_to catalogs_path
   end
 
