@@ -50,4 +50,7 @@
 
 <% @user.catalogs.each do |catalog| %>
   <%= attachment_image_tag catalog, :image %>
+  <%= link_to "詳細", catalog_path(catalog) %>
+  <%= link_to "編集", edit_catalog_path(catalog) %>
+  <%= link_to "削除", catalog_path(catalog), method: :delete, data: {confirm: "削除しますか？"} %>
 <% end %>
