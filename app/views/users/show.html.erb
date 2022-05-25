@@ -68,17 +68,19 @@
                     </span>
                     詳細を見る
                   <% end %>
-                  <%= link_to edit_catalog_path(catalog), class: "panel-block" do %>
-                    <span class="panel-icon">
-                      <i class="fas fa-edit"></i>
-                    </span>
-                    編集する
-                  <% end %>
-                  <%= link_to catalog_path(catalog), method: :delete, data: {confirm: "削除しますか？"}, class: "panel-block" do %>
-                    <span class="panel-icon">
-                      <i class="fas fa-trash"></i>
-                    </span>
-                    削除する
+                  <% if @user.id == current_user.id %>
+                    <%= link_to edit_catalog_path(catalog), class: "panel-block" do %>
+                      <span class="panel-icon">
+                        <i class="fas fa-edit"></i>
+                      </span>
+                      編集する
+                    <% end %>
+                    <%= link_to catalog_path(catalog), method: :delete, data: {confirm: "削除しますか？"}, class: "panel-block" do %>
+                      <span class="panel-icon">
+                        <i class="fas fa-trash"></i>
+                      </span>
+                      削除する
+                    <% end %>
                   <% end %>
                 </div>
               </div>
