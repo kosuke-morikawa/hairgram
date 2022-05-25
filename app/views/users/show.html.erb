@@ -47,3 +47,7 @@
     </div>
   </div>
 </section>
+
+<% @user.catalogs.each do |catalog| %>
+  <%= attachment_image_tag catalog, :image %>
+<% end %>
