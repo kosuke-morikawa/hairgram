@@ -1,4 +1,5 @@
 class CatalogsController < ApplicationController
+  before_action :authenticate_user!, except: [:index]
   def index
     @catalogs = Catalog.all
   end
