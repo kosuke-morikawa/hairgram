@@ -21,6 +21,9 @@ class CatalogsController < ApplicationController
 
   def edit
     @catalog = Catalog.find(params[:id])
+    if @catalog.user != current_user
+      redirect_to catalogs_path, alert: '不正なアクセスです。'
+    end
   end
 
   def update
