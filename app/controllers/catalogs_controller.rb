@@ -31,8 +31,11 @@ class CatalogsController < ApplicationController
 
   def update
     @catalog = Catalog.find(params[:id])
-    @catalog.update(catalog_params)
-    redirect_to catalog_path(@catalog)
+    if @catalog.update(catalog_params)
+      redirect_to catalog_path(@catalog)
+    else
+      render :edit
+    end
   end
 
   def destroy
