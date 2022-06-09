@@ -16,7 +16,7 @@ class CatalogsController < ApplicationController
     @catalog = Catalog.new(catalog_params)
     @catalog.user_id = current_user.id
     if @catalog.save
-      redirect_to catalog_path(@catalog)
+      redirect_to catalog_path(@catalog), notices: '投稿に成功しました。'
     else
       render :new
     end
