@@ -8,4 +8,8 @@ class User < ApplicationRecord
   has_many :favorites, dependent: :destroy
   
   validates :username, presence: true
+
+  def already_favorited?(catalog)
+    self.favorites.exits?(catalog_id: catalog.id)
+  end
 end
