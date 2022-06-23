@@ -12,4 +12,5 @@ class User < ApplicationRecord
   def already_favorited?(catalog)
     self.favorites.exits?(catalog_id: catalog.id)
   end
+  
 end
