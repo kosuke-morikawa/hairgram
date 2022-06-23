@@ -10,7 +10,7 @@ class User < ApplicationRecord
   validates :username, presence: true
 
   def already_favorited?(catalog)
-    self.favorites.exits?(catalog_id: catalog.id)
+    self.favorites.exists?(catalog_id: catalog.id)
   end
   
 end
