@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   root to: "home#index"
   resources :users
   resources :catalogs do
-    resources :favorites, only: [:create, :destroy]
+    resource :favorites, only: [:create, :destroy]
   end
 end
