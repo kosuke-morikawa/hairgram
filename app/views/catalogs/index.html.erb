@@ -33,6 +33,10 @@
                 <div class="media-content">
                   <div class="title"><%= link_to catalog.user.username, user_path(catalog.user.id) %></div>
                 </div>
+                <div class="media-content">
+                  <% if current_user.already_favorited?(catalog) %>
+                  <% end %>
+                </div>
               </div>
               <div class="content">
                 <time><%= catalog.updated_at.strftime("%Y-%m-%d %H:%M") %></time>更新
