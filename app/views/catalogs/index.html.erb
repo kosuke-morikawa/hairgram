@@ -35,9 +35,13 @@
                 </div>
                 <div class="media-content">
                   <% if current_user.already_favorited?(catalog) %>
-                    <%= link_to 'いいねを外す', catalog_favorites_path(catalog), method: :delete %>
+                    <%= link_to catalog_favorites_path(catalog), method: :delete do %>
+                      <i class="fas fa-heart"></i>
+                    <% end %>
                   <% else %>
-                    <%= link_to 'いいね', catalog_favorites_path(catalog), method: :post %>
+                    <%= link_to catalog_favorites_path(catalog), method: :post do %>
+                      <i class="fas fa-heart"></i>
+                    <% end %>
                   <% end %>
                   <%= catalog.favorites.count %>
                 </div>
