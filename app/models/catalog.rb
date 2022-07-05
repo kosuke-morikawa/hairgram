@@ -10,6 +10,7 @@ class Catalog < ApplicationRecord
       Catalog.all
     end
   end
+  
 
   with_options presence: true do
     validates :title
