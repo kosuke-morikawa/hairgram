@@ -45,12 +45,6 @@
           <div class="navbar-item">
             <%= link_to "新規投稿", new_catalog_path, class: "navbar-item button is-warning is-light" %>
           </div>
-           <div class="navbar-item">
-            <%= form_with url: search_path, local: true, method: :get do |f| %>
-              <%= f.text_field :word, class: "search-input is-warning is-large"%>
-              <%= f.submit "検索", class: "search-btn" %>
-            <% end %>
-          </div>
           <div class="navbar-end">
             <div class="navbar-item">
               <div class="field is-grouped">
