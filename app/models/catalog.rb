@@ -11,7 +11,6 @@ class Catalog < ApplicationRecord
     end
   end
   
-  
   with_options presence: true do
     validates :title
     validates :body
