@@ -44,6 +44,10 @@ class CatalogsController < ApplicationController
     redirect_to catalogs_path
   end
 
+  def search
+    @catalogs = Catalog.search(params[:keyword])
+  end
+
   private
   def catalog_params
     params.require(:catalog).permit(:title, :body, :image)
