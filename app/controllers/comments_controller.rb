@@ -3,6 +3,7 @@ class CommentsController < ApplicationController
     Comment.create(comment_params)
     redirect_to "/catalogs/#{comment.catalog.id}"
   end
+  
 
   private
   def comment_params
