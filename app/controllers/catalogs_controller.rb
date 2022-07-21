@@ -6,6 +6,8 @@ class CatalogsController < ApplicationController
 
   def show
     @catalog = Catalog.find(params[:id])
+    @comment = Comment.new
+    @comments = @catalog.comments.includes(:user)
   end
 
   def new
