@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
   def create
     Comment.create(comment_params)
-    redirect_to "/catalogs/#{comment.catalog.id}"
+    redirect_back(fallback_location: root_path)
   end
   
   private
